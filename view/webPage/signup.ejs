@@ -1,0 +1,29 @@
+<% layout('./boilerplate/boilerplate.ejs') %>
+<body>
+    <h2 class="row offset-2">sign-up in BINARY CLUB</h2>
+    <div class="row offset-2">
+     <form action="/user/signup" method="POST" class="needs-validation" novalidate >
+         <div class="col-8 mb-2 mt-2">
+             <label for="" class="form-label">Username</label>
+             <input type="text" name="username" required  class="form-control">
+             <div class="invalid-feedback">Enter the username </div>
+         </div>
+         
+         <div class="col-8 mb-2">
+             <label for="" class="form-label">E-mail</label>
+             <input type="email" name="email" required  class="form-control">
+             <div class="invalid-feedback">Enter the email </div>
+ 
+         </div>
+         <div class="col-8 mb-2">
+             <label for="" class="form-label">password</label>
+             <input type="password" name="password" required  class="form-control">
+             <div class="invalid-feedback">Enter the password </div>
+ 
+         </div>
+         
+         <button class="btn btn-success">Sign-up</button>
+     </form>
+    </div>
+ </body>
+ 

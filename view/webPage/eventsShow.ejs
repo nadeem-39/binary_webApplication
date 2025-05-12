@@ -1,0 +1,28 @@
+<% layout('./boilerplate/boilerplate.ejs') %>
+
+
+<body>
+    <h3 style="text-align: center;">Binary <%=type %></h3>
+    <div class="all-events">
+        <% for( let event of similarEvents){ %>
+            <a href="/event/show/<%=event._id%>">
+              <div class="card mb-2" style="width: 18rem;">
+                <img src="<%=event.image %>" class="card-img-top" alt="member_image">
+                <div class="card-body">
+                  <h5 class="card-title"><%=event.title%></h5>
+                  
+                  <h5 class="card-price"><%=event.date %></h5>
+                </div>
+              </div></a>
+            <% } %>
+            <%if(currUser && currUser.username=='binaryclub'){%>
+            <a href="/event/new">
+              <div class="card mb-2" style="width: 18rem;">
+                  <img src="../images/plus_icon.png" class="card-img-top" alt="member_image">
+                  <p style="text-align: center;" class="card-title">Add Event</p>
+              </div>
+          </a>
+          <% } %>
+      </div>
+      
+</body>

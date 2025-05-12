@@ -1,0 +1,75 @@
+<% layout('boilerplate/boilerplate.ejs') %>
+<body>
+    <div class="row offset-2">
+        <form method="POST" action="/event/edit/<%=currEvent._id%>?_method=PUT"   novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="col-8 mb-2 mt-4 typeOfEvent">
+                <div class="talk"><label class="form-label">Binary Talk</label>
+                    <input type="radio" name="events[type]" value="talks">
+                </div>
+                <div class="hack"><label class="form-label">Binary Hack</label>
+                    <input type="radio" name="events[type]" value="hacks">
+                </div>
+                <div class="code"><label class="form-label">Binary Code</label>
+                    <input type="radio" name="events[type]" value="codes">
+                </div>
+            </div>
+            <div class="col-8 mb-2 ">
+                <label for="" class="form-label" >Title Of Event</label>
+                <input type="text" name="events[title]" value="<%=currEvent.title %>" required class="form-control">
+                <div class="invalid-feedback">Enter the title </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Image Of Event</label>
+                <input type="file" name="events[image]" required value="" id="" class="form-control">
+                
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Date Of Event</label>
+                <input type="date" name="events[date]" value="<%=currEvent.date %>" required  class="form-control">
+                <div class="invalid-feedback">Enter the date </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Description Of Event</label>
+                <textarea name="events[description]" required  cols="30" rows="10" class="form-control"><%=currEvent.description %></textarea>
+                <div class="invalid-feedback">Enter the description </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Total Participants In Event</label>
+                <input type="number" name="events[participants]" required value="<%=currEvent.participants %>"  class="form-control">
+                <div class="invalid-feedback">Enter the no of participants </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Winners Name Of Event</label>
+                <input type="text" name="events[winner]" value="<%=currEvent.winner %>" class="form-control" placeholder="optional">
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Included Year In Event</label>
+                <input type="text" name="events[includedYear]" value="<%=currEvent.includedYear %>" required  class="form-control">
+                <div class="invalid-feedback">Enter the included year </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Included Branch In Event</label>
+                <input type="text" name="events[includedBranch]" required value="<%=currEvent.includedBranch %>" class="form-control">
+                <div class="invalid-feedback">Enter the included branch </div>
+
+            </div>
+            <div class="col-8 mb-2">
+                <label for="" class="form-label">Venue of Event</label>
+                <input type="text" name="events[venue]" required value="<%=currEvent.venue %>" class="form-control">
+                <div class="invalid-feedback">Enter the venue of event </div>
+
+            </div>
+    
+            <%if(currUser && currUser.username=='binaryclub'){%>
+            <button class="btn btn-primary">Edit Event </button>
+            <% } %>
+        </form>
+    </div>
+    
+</body>

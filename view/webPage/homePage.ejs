@@ -1,0 +1,190 @@
+<% layout('./boilerplate/boilerplate.ejs') %>
+
+
+<body>
+    <div style="background-color: rgb(109, 0, 0); color:aliceblue; text-align:center"><h3 style="padding: 5px;">Department  Of Computer Science & Engineering</h3></div>
+    <div class="all-icon">
+        <a href="#members">
+            <div class="member-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                 <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                </svg>
+                <p>Members</p>
+            </div>
+        </a>
+        
+        <a href="#events">
+            <div class="event-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                    <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54L1 12.5v-9a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+                <p>Events Gallery</p>
+            </div>
+        </a>
+        <a href="#contact">
+            <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
+                    <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+                  </svg>
+                <p>Contact</p>
+            </div>
+            <a href="#about">
+                <div class="about-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-font-fill" viewBox="0 0 16 16">
+                        <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M5.057 6h5.886L11 8h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v5.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V6.755l-.293.01C5.856 6.808 5.68 6.905 5.5 8H5z"/>
+                    </svg>
+                    <p>About</p>
+                </div>
+            </a>
+
+    </div>
+
+
+<!-- carousel effect -->
+<div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel" data-bs-interval="1500">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active"><img src="/images/crasual1.jpeg" class="d-block w-100" alt="..."></div>
+      <div class="carousel-item"><img src="/images/crasual2.jpeg" class="d-block w-100" alt="..."></div>
+      <div class="carousel-item"><img src="/images/crasual3.jpeg" class="d-block w-100" alt="..."></div>
+      <div class="carousel-item"><img src="/images/crasual4.jpeg" class="d-block w-100 " alt="..."></div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- faculty message -->
+   
+  <h2 class="pr-message-heading mb-5 mt-5">Words of Wisdom</h2>
+  <div class="coordinator-msg">
+    <div class="hod-message msg-box" >
+         <div class="name-desg" style="text-align: center; border-radius:25px 25px 0 0;background-color:maroon; height:60px; padding:0.5rem; color:aliceblue"><h4><b>Dr. Amit Singhal(HOD - CSE )</b></h4></div>
+         <div class="msg-img">
+            <div><img style = "height:180px; width:180px ; border-radius:50%; margin-left:0.5rem;" src="https://i1.rgstatic.net/ii/profile.image/11431281241281414-1715070611162_Q512/Amit-Singhal-17.jpg" alt=""></div>
+            <div style="margin-left: 8px; margin-right:0.5rem;"><p>I am pleased to see the enthusiastic efforts of our students through The Binary Club. The club has been a great platform for nurturing talent, encouraging innovation, and building a strong technical foundation. I commend the team for organizing engaging events and promoting a culture of learning beyond the classroom. I wish the club continued success in all its future endeavors.</p></div>
+         </div>
+       
+       
+    </div>
+    <div class="coordinator-message msg-box" >
+        
+        <div class="name-desg"  style="text-align: center; border-radius:25px 25px 0 0;background-color:maroon; height:60px; padding:0.5rem; color:aliceblue"><h4><b>Mr. Vineet Shrivastava (Faculty Coordinator)</b></h4></div>
+        <div class="msg-img">
+            <div><img style = "height:180px; width:180px ; border-radius:50%; margin-left:0.5rem;" src="/images/vineetshri.jpg" alt=""></div>
+            <div style="margin-left: 8px; margin-right:0.5rem;"><p>It has been a wonderful experience guiding The Binary Club. The dedication and creativity shown by the students in organizing events, workshops, and coding challenges is truly inspiring. The club continues to provide a valuable platform for learning, teamwork, and technical growth. I am proud to be associated with such a motivated group and look forward to more exciting initiatives ahead.</p></div>
+        </div>
+    </div>
+         
+  </div>
+
+<!-- event div -->
+  
+    <hr id="events">
+    <br>
+    <h2  style="text-align: center;color:brown;" class="mt-4 mb-4">Binary Events</h2>
+    <br>
+    <div class="all-type-evnets" >
+
+        
+            <a href="/event/talks">
+                <div class="event-card mb-2" style="width: 23rem;">
+                    <img src="/images/binaryTalks.png" class="card-img-top" alt="Binary Talks">
+                    <!-- <div class="card-body">
+                      <h5 style="text-align: center;" class="card-title">Binary Talks</h5>
+                    </div> -->
+                  </div>
+            </a>
+            <!-- <a href="/event/hacks">
+                <div class="event-card mb-2" style="width: 23rem;">
+                    <img src="/images/binaryHacks.png" class="card-img-top" alt="member_image">
+                  </div>
+            </a> -->
+            <a href="/event/codes">
+                <div class="event-card mb-2" style="width: 23rem;">
+                    <img src="/images/binaryCodes.png" class="card-img-top" alt="Binary codes">
+                  </div>
+            </a>
+            <a href="/event/hacks">
+                <div class="event-card mb-2" style="width: 23rem;">
+                    <img src="/images/binaryHacks.png" class="card-img-top" alt="Binary Hacks">
+                  </div>
+            </a>
+      </div>
+
+      <br><br><br>;
+
+
+<!-- member post div -->
+      <hr id="members">
+      <h2  style="text-align: center;color:brown;" class="mt-4 mb-4">Binary club members</h2>
+    <div class="allmembers" >
+        <% for( let member of memberData){ %>
+              <div class="containerMember mb-4">
+                <div class="postName">
+                    <h5 class="postD"><%=member.post %></h5>
+                </div>
+                <div class="imgContainer">
+                   <img src="<%=member.image %>" alt="" class="image">
+                    <div class="description">
+                        <h5 class="name"><%=member.name %></h5>
+                        <ul class="details">
+                            <li>Year : <%=member.year %></li>
+                            <li>Branch : <%=member.branch %></li>
+                            <li>E-Mail : <%= member.email.split('@')[0]+'@' %></li>
+                            <li>Skills : <%=member.skills %></li>
+                            <%if(currUser && currUser.username=='binaryclub'){%>
+                                <li><form method="POST" action="/member/delete/<%=member._id%>?_method=DELETE">
+                                    <button class="btn  memberDeleteButton ">X</button>
+                                </form></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        <%if(currUser && currUser.username=='binaryclub'){%>
+            <a href="/member/new">
+
+                <div class="containerMember mb-2">
+                    <div class="postName">
+                        <h2></h2>
+                    </div>
+                    <div class="imgContainer">
+                       <img src="../images/plus_icon.png" alt="" class="image">
+                        <div class="description">
+                            
+                            <ul class="details">
+                                <h2 class="name" style="color: black;">Add new member</h2>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </div>
+<!-- About-club page-Binary -->
+<hr id="about">
+<section class="section2" id="sec2">
+    <h2 class="about-club-heading , headings" style="text-align: center; color: brown;" >&#x22C6 ABOUT CLUB &#x22C6</h2>
+  <p class="about-club-pg">Welcome to The Binary Club—the heart of coding and technology at RKGIT Ghaziabad!<br>
+    At The Binary Club, we are passionate about building a community where innovation, problem-solving, and coding excellence thrive. Our club is dedicated to empowering students with the tools and knowledge to succeed in the tech world, whether you're a coding novice or an experienced developer.
+    Through a variety of events like hackathons, coding competitions, workshops, and collaborative projects, we aim to provide a platform where creativity meets logic, and ideas transform into reality. 
+    <br>The Binary Club isn’t just about writing code; it’s about developing skills that last a lifetime—teamwork, leadership, and the perseverance to solve complex challenges.
+    Join us as we explore the exciting world of programming, foster a spirit of innovation, and make a meaningful impact both within our college and beyond.<br><br><b> Code, Create, Innovate.</b><br><b> The Binary Club—Its all about 0’s & 1’s!</b>
+   </p>
+</section>
+
+</body>

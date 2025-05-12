@@ -1,0 +1,49 @@
+<% layout('./boilerplate/boilerplate.ejs') %>
+<body>
+   <div class="row offset-2">
+    <form action="/member/create" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="col-8 mb-2 mt-2">
+            <label for="" class="form-label">Name of Member</label>
+            <input type="text" name="members[name]" required  class="form-control">
+            <div class="invalid-feedback">Enter the name </div>
+        </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Image of member</label>
+            <input type="file" name="members[image]" required  class="form-control">
+            </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Year of member</label>
+            <input type="number" name="members[year]" required  class="form-control">
+            <div class="invalid-feedback">Enter the year  </div>
+
+        </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Post of member</label>
+            <input type="text" name="members[post]" required  class="form-control">
+            <div class="invalid-feedback">Enter the post </div>
+
+        </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Branch of member</label>
+            <input type="text" name="members[branch]" required  class="form-control">
+            <div class="invalid-feedback">Enter the branch </div>
+
+        </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">Skills of member</label>
+            <input type="text" name="members[skills]" required  class="form-control">
+            <div class="invalid-feedback">Enter the skills </div>
+
+        </div>
+        <div class="col-8 mb-2">
+            <label for="" class="form-label">E-mail of member</label>
+            <input type="email" name="members[email]" required  class="form-control">
+            <div class="invalid-feedback">Enter the email </div>
+
+        </div>
+        <%if(currUser && currUser.username=='binaryclub'){%>
+        <button class="btn btn-primary">Add member in Binay-club</button>
+        <% } %>
+    </form>
+   </div>
+</body>

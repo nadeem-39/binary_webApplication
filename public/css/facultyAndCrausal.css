@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.d-block{
+    height:300px;
+}
+.pr-message-heading{
+    width:auto;
+    height: fit-content;
+    text-align: center;
+    font: 2rem;
+    margin-top: 10px;
+    color:  rgb(146, 8, 8);
+}
+.coordinator-msg{
+    display:flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+    gap:1rem;
+    width: 100%;
+    height:100%;
+    margin-bottom: 5rem;
+}
+.msg-box{
+    max-width: 600px;
+    border-radius: 25px;
+    /* padding: 1rem; */
+    padding-top: 0;
+    height: 280px;
+    box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    -moz-box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    display: flex;
+    flex-direction: column;
+}
+.msg-img{
+    display: flex;
+    margin-top: 1rem;
+
+}
+/* .president-message{
+    padding-top:1rem;
+    font-size:1rem ;
+    text-align: justify;
+    width: 50rem;
+    height: 20rem;
+}
+.name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pr-photo{
+    height: 38rem;
+    width:28rem;
+    margin-top: 10px;  
+
+}
+.fac-name{
+    border: 2px dashed brown;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.6rem;   
+    margin-top: 15px;
+} */
+@media(max-width : 1149px),(min-width:731px){
+    .pr-photo {
+        flex-wrap: nowrap;
+       height : 18rem;
+       width:18rem;
+       margin-top: 0px;
+    }
+
+
+        
+}
+
+@media(max-width:725px){
+    .president-message{
+        overflow: scroll;
+        height: 300px;
+        padding-top:0rem;
+        margin-top: 5px;
+    }
+    .pr-photo{
+        height:15rem;
+        width:15rem;
+        /* padding: 1rem; */
+        margin-top: 60px;
+    }
+    .d-block{
+        height:150px;
+    }
+
+    .msg-img{
+        display: flex;
+        flex-direction: column;
+    }
+    .msg-box{
+        height: 100%;
+        margin: 10px;
+    }
+
+    .msg-img div:first-child{
+        align-self: center;
+        margin-bottom: 5px;
+    }
+    
+}
+

@@ -1,0 +1,78 @@
+.typeOfEvent{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.allmembers,.all-type-evnets, .all-events{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+   
+}
+
+a{
+    text-decoration: none;
+    color: rgb(146, 8, 8);
+}
+.event-card{
+    box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    -moz-box-shadow: 6px 9px 9px 1px rgba(0,0,0,0.53);
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: black;
+
+    
+}
+
+.card img{
+    border-radius: 10px 10px 0px 0px;
+    margin-top:-5px;
+    margin-left: -1px;
+    width: 290px;
+    height: 200px;
+
+}
+.card:hover{
+    box-shadow: 5px 5px 30px black;
+    
+}
+
+.event-card img{
+    border-radius: 10px;
+    transition: box-shadow 3s ease;
+
+}
+
+.event-card:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 30px black;
+
+
+}
+
+.all-icon{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.event-icon, .member-icon,.contact-icon,.about-icon{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-club-pg{
+    width:95%;
+    font-size:1rem ;
+    text-align: center;
+    margin-top: 1rem;
+
+}
+

@@ -1,0 +1,56 @@
+<% layout("./boilerplate/boilerplate") %>
+<body>
+    <div class="row offset-2 mt-4">
+    
+
+    <div class="col-8 ">
+        <h3 >Event details</h3>
+            <div class="card" style="border: none;">
+                <img src="<%=currEvent.image %>" style="border-radius: 10px; height: 400px;" alt="listing_image">
+                <div class="card-body " style="border: none;">
+                    <p class="card-text">owned by Binary-Club</p>
+                    <b> <%=currEvent.title%> </b>
+                    <br>
+                    <p class="card-text"> Date of event<%=currEvent.date%></p>
+                </div>
+                    <b>Description of Event</b>
+                    <p class="card-text"> <%= currEvent.description %></p>
+                  
+                    <br>
+
+                    <b>Number of participants</b>
+                    <p class="card-text"><%= currEvent.participants %></p>
+                  
+                   <br>
+                    <% if(currEvent.winners){ %>
+                        <b>Winners of event</b>
+                        <p class="card-text"><%= currEvent.winners %></p>
+                    <% } %>
+                    <br>
+                    <b>Included brach in event</b>
+                    <p class="card-text"><%= currEvent.includedBranch %></p>
+                    <br>
+                    <b>Included Year in event</b>
+                    <p class="card-text"><%= currEvent.includedYear %></p>
+                    <br>
+                    <b>Venue of event</b>
+                    <p class="card-text"><%= currEvent.venue %></p>
+                    <br>
+                    <br>
+                <%if(currUser && currUser.username=='binaryclub'){%>
+                <div class="edit-delete-btn">
+                    <form action="/event/editForm/<%=currEvent._id%>" class="me-4">
+                        <button class="btn btn-primary">Edit</button>
+                    </form>
+                    <br>
+                    <form method="post" action="/event/delete/<%=currEvent._id%>?_method=DELETE">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+
+                </div>
+                <% }%>
+
+              </div>
+        </div>
+
+</body>

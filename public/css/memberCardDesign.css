@@ -1,0 +1,55 @@
+.containerMember {
+    height: 15rem;
+    width:22rem;
+    background-image: linear-gradient(to right, red ,rgb(104, 11, 11), rgb(13, 9, 30));
+    border-radius: 25px;
+    padding-top: 2px;
+}
+.postName{
+    background-color: rgb(24, 22, 22);
+    border-radius: 25px;
+    height : 2rem;
+    width: 15rem;
+    color: azure;
+    margin: auto;
+}
+.imgContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+.description{
+  width: 15rem;
+  height: 10rem;
+  background-color: rgb(251, 253, 253);
+  border-radius: 25px 0 0 25px;
+  text-align: left;
+}
+.name{
+   margin-top: 0.2rem;
+   text-align: center;
+}
+.details{
+    padding-left: 20px;
+}
+.image{
+    height: 6.5rem;
+    width:6.5rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin-left: 3px;
+
+}
+.postD{
+    padding: 3px;
+    margin-top: 13px;
+    text-align: center;   
+}
+
+
+.memberDeleteButton{
+    margin-top: -5px;
+    color: red;
+}
