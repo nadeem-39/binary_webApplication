@@ -100,6 +100,9 @@ app.get('/',async(req,res)=>{
     res.render('webPage/homePage.ejs',{memberData});
 })
 
+app.get('/developerInfo',(req,res)=>{
+    res.render('webPage/developerInfo.ejs');
+})
 
 //member new forms
 app.use('/member',memberRoute);
