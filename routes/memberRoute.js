@@ -8,6 +8,7 @@ const upload = multer(storage);
 const asycnWrap = require('../utils/asyncWrap.js');
 
 
+
 // new member form 
 router.get('/new',isLoggedIn, isOwner,(req,res)=>{
         res.render('webPage/memberForm.ejs');     
@@ -33,7 +34,9 @@ router.post('/create',isLoggedIn,isOwner, upload.single('members[image]'), valid
 router.delete('/delete/:id',isLoggedIn, isOwner, asycnWrap( async(req, res)=>{
     const {id} = req.params;
     const data = await Members.findByIdAndDelete(id);
+
     req.flash('success','Successfully deleted new member');
+    
     res.redirect('/');
     
 }))

@@ -113,6 +113,14 @@ body{
         align-self: center;
         margin-bottom: 5px;
     }
+
+    .cseDepartment{
+        font-size: 10px;
+    }
+
+    .cseDepartmentDev{
+        margin: -15px 0 -10px 0;
+    }
     
 }
 
