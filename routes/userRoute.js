@@ -4,13 +4,15 @@ const { isLoggedIn, saveRedirectUrl} = require('../middleware.js');
 const User = require('../models/userSchema.js');
 const { route } = require('./memberRoute.js');
 const passport = require('passport');
+const asycnWrap = require('../utils/asyncWrap.js');
+const asyncWrap = require('../utils/asyncWrap.js');
 
 
 router.get('/signUpForm', (req,res)=>{
     res.render('webPage/signup.ejs');
 })
 
-router.post('/signup',async (req,res)=>{
+router.post('/signup', asycnWrap(async (req,res)=>{
     let{username, email,password} = req.body;
     const newUser= new User({email,username});
     
@@ -24,14 +26,14 @@ router.post('/signup',async (req,res)=>{
         }
     })
     
-})
+}))
 
 router.get('/signInForm',   (req,res)=>{
     res.render('webPage/signin.ejs');
 })
 
 
-router.post('/signin', saveRedirectUrl, passport.authenticate('local',{failureRedirect:'/user/signInForm', failureFlash: true}), async(req,res)=>{
+router.post('/signin', saveRedirectUrl, passport.authenticate('local',{failureRedirect:'/user/signInForm', failureFlash: true}), asyncWrap( async(req,res)=>{
     req.flash('success','Welcome back to Binary club');
    if(res.locals.redirectUrl){
     res.redirect(res.locals.redirectUrl)
@@ -39,7 +41,7 @@ router.post('/signin', saveRedirectUrl, passport.authenticate('local',{failureRe
     res.redirect('/');
    }
     
-})
+}));
 
 router.get('/signout', isLoggedIn, (req,res, next)=>{
     req.logout((err)=>{

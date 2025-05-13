@@ -6,8 +6,7 @@ const { valid } = require('joi');
 const multer = require('multer');
 const storage = require('../cloud_config.js');
 const upload = multer(storage);
-
-
+const asycnWrap = require('../utils/asyncWrap.js');
 
 
 
@@ -17,7 +16,7 @@ router.get('/new',isLoggedIn,isOwner,(req,res)=>{
 })
 
 //creating new event
-router.post('/create',isLoggedIn, isOwner,upload.single('events[image]'), validateEvent ,async(req, res)=>{
+router.post('/create',isLoggedIn, isOwner,upload.single('events[image]'), validateEvent ,asycnWrap(async(req, res)=>{
     if(req.file){
         req.body.events.image = req.file.path;
     }else{
@@ -29,20 +28,20 @@ router.post('/create',isLoggedIn, isOwner,upload.single('events[image]'), valida
         res.redirect(`/event/${newEvent.type}`);
     
     
-})
+}));
 
 //similar event data
-router.get('/show/:_id', async(req,res)=>{
+router.get('/show/:_id', asycnWrap(async(req,res)=>{
     const {_id} = req.params;
     const currEvent = await Events.findById(_id);
     if(!currEvent){
         req.flash('error','Event no longer exist')
         res.redirect('/')
     }else res.render('webPage/singleEventShow.ejs',{currEvent});
-})
+}))
 
 // delete event
-router.delete('/delete/:id',isLoggedIn , isOwner,async (req, res)=>{
+router.delete('/delete/:id',isLoggedIn , isOwner, asycnWrap( async (req, res)=>{
         const {id} = req.params;
         let data  = await Events.findById(id);
         if(!data){
@@ -55,11 +54,11 @@ router.delete('/delete/:id',isLoggedIn , isOwner,async (req, res)=>{
         }
     
     
-})
+}));
 
 //render edit form of event
 
-router.get('/editForm/:id',isLoggedIn,isOwner,async (req, res)=>{
+router.get('/editForm/:id',isLoggedIn,isOwner, asycnWrap( async (req, res)=>{
     let {id} = req.params;
     let currEvent = await Events.findById(id);
     if(!currEvent){
@@ -67,11 +66,11 @@ router.get('/editForm/:id',isLoggedIn,isOwner,async (req, res)=>{
         res.redirect('/')
     }else res.render('webPage/editEvent.ejs',{currEvent});
     
-})
+}))
 
 
 
-router.put('/edit/:id', isLoggedIn, isOwner, upload.single('events[image]'),validateEvent, async(req, res)=>{
+router.put('/edit/:id', isLoggedIn, isOwner, upload.single('events[image]'),validateEvent, asycnWrap(async(req, res)=>{
     let {id} = req.params;
     let {events} = req.body;
     if(req.file){
@@ -84,13 +83,13 @@ router.put('/edit/:id', isLoggedIn, isOwner, upload.single('events[image]'),vali
     req.flash('success','Event successfylly edited');
     res.redirect(`/event/show/${id}`);
     
-})
+}))
 
-router.get('/:type',async(req,res)=>{
+router.get('/:type', asycnWrap( async(req,res)=>{
     const type = req.params.type;
     let similarEvents = await Events.find({type:type});
     res.render('webPage/eventsShow.ejs',{similarEvents,type});
-})
+}));
 
 
 module.exports = router;
